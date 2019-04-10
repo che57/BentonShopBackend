@@ -21,7 +21,7 @@ app.use(cors());
 var mongoose = require("mongoose");
 mongoose.connect(url, { useNewUrlParser: true });
 
-var port = 443;
+var port = process.env.PORT || 3000;
 
 var unauth = require("./scripts/unauth");
 app.use('/api', unauth);

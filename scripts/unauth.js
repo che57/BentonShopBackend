@@ -25,10 +25,12 @@ router.use((req, res, next)=>{
 router.route('/items')
     .get((req, res)=>{
         // var nSkip = req.query.page * nPerPage;
-        Item.find().sort({salesVolume: -1}).skip(nSkip).limit(nPerPage).exec((err, items)=>{
-            if(err) res.send(err);
-            res.json(items);
-        })
+        Item.find((error, result) => {
+            if(error) {
+                return res.status(500).send(error);
+            }
+            res.send(result);
+        });
         // Item.find({$where: 'this.stock > 0'}).sort({salesVolume: -1}).skip(nSkip).limit(nPerPage).exec((err, items)=>{
         //     if(err) res.send(err);
         //     res.json(items);

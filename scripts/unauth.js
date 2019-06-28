@@ -24,6 +24,8 @@ router.use((req, res, next)=>{
 
 router.route('/items')
     .get((req, res)=>{
+
+        // res.send("lalaa");
         // var nSkip = req.query.page * nPerPage;
         Item.find((error, result) => {
             if(error) {

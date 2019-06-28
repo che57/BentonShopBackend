@@ -5,7 +5,7 @@ var bodyParser = require("body-parser");
 var verifyToken = require("./scripts/verify");
 var verifyAdmin = require("./scripts/verifyAdmin");
 var cors = require("cors");
-const url = "mongodb+srv://che57:che57@bentonshop-omgwi.mongodb.net/Shop?retryWrites=true";
+const url = "mongodb://benton-shop-db:27017/items";
 
 /*app.all("/api/*", function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -21,7 +21,7 @@ app.use(cors());
 var mongoose = require("mongoose");
 mongoose.connect(url, { useNewUrlParser: true });
 
-var port = process.env.PORT || 3000;
+var port = 3000;
 
 var unauth = require("./scripts/unauth");
 app.use('/api', unauth);

@@ -12,7 +12,7 @@
     "cors": "^2.8.5",
     "email-verification": "^0.4.6",
     "express": "^4.16.4",
-    "jsonwebtoken": "^8.4.0",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^5.3.12",
     "ngx-bootstrap": "^3.1.2"
   },
